@@ -174,12 +174,3 @@ if __name__ == "__main__":
     strategy = Strategy(10)
     sim = Sim(10, 10, 10**10)
     strategy.run(sim)
-    bid = ask = bid_cnt = ask_cnt = 0
-    for trade in sim.trades:
-        if trade.side == 'ASK':
-            ask_cnt += 1
-            ask += trade.price
-        else:
-            bid_cnt += 1
-            bid += trade.price
-    print(bid / bid_cnt - ask / ask_cnt)
